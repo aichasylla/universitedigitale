@@ -1,0 +1,142 @@
+<%- include('tete'); -%>
+<style>
+  .user-profile-image {
+   width: 100px;
+   height: 100px;
+   margin-bottom: 10px;
+}
+.rounded-circle {
+   border-radius: 50% !important;
+}
+@media (max-width:767px){.hidden-xs{display:none!important}}@media (min-width:768px) and (max-width:991px){.hidden-sm{display:none!important}}@media (min-width:992px) and (max-width:1199px){.hidden-md{display:none!important}}@media (min-width:1200px){.hidden-lg{display:none!important}}
+</style>
+<%- include('header'); -%>
+<div class="container">
+  <div style="background-color: #fff;" class="row   hidden-md hidden-lg">
+       <div class="col-lg-12 col-sm-12">
+         <div class="dropdown  pull-left"> 
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"> <img src="/assets/page/image/avatar.png" class="user-profile-image rounded-circle" alt="" /><b class="caret"></b></a>
+            <ul style="margin-top: 160px;" class="dropdown-menu">
+              <div style="background: #fff; padding: 15px;" class="col-md-7 col-lg-3 ">
+                       <div class="card card-white">
+                           <div class="text-center card-body user-profile-card">
+                               <p class="text-center m-t-lg">Nom au complet</p>
+                               <h4 class="text-center"><%= nom %></h4>
+                               <hr>
+                               <ul class="list-unstyled text-center">
+                                  <li>
+                                      <p><i class="text-center"></i>Matricule</p>
+                                  </li>
+                                  <li>
+                                      <h4><%= matricule %></h4>
+                                  </li>
+                                  <li>
+                                    <p><i class="text-center"></i>Departement</p>
+                                </li>
+                                <li>
+                                    <h4><%= departe %></h4>
+                                </li>
+                                  <li>
+                                      <p><i class="text-center"></i>Classe</p>
+                                  </li>
+                                  <li>
+                                      <h4><%= classe %></h4>
+                                  </li>
+                               </ul>
+                               <hr>
+                              <a href="/forum/modifier"><button style="width: 100%; height: auto;  border-color: #fff; font-size: 20px;" class=" btn btn-primary">Modifier profil</button></a> 
+                               <hr>
+                               <a href="/forum/deconnection"><button  style="width: 100%; height: auto;  border-color: #fff; font-size: 20px;" class=" btn btn-primary">Deconnecter</button></a></div>
+                       </div>
+                   </div>
+            </ul>
+           </div>
+       </div>
+   </div>   
+</div>
+<div class="py-5" style="	background-image: url(/assets/page/image/cta2-background.jpg);	background-position: top left;	height: 400px;	background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="px-md-5 p-3 col-md-12 d-flex flex-column justify-content-center">
+          <h1 class="text-light">ESPACE CLASSE</h1>
+          <p class="mb-3 lead text-light">Ici vous pouvez acceder soit  cours ou au forum de discution</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div style="background: #fff; padding: 25px;" class="col-md-3 hidden-xs col-lg-4">
+                   <div class="card card-white col-lg-12">
+                       <div class="card-heading clearfix">
+                           <h4 class="text-center card-title">Profile d'utilisateur</h4>
+                       </div>
+                       <div class="text-center card-body user-profile-card">
+                          <img src="/assets/page/image/avatar.png" class="user-profile-image rounded-circle" alt="" />
+                           <p class="text-center m-t-lg">Nom au complet</p>
+                           <h4 class="text-center"><%= nom %></h4>
+                           <hr>
+                           <ul class="list-unstyled text-center">
+                               <li>
+                                   <p><i class="text-center"></i>Matricule</p>
+                               </li>
+                               <li>
+                                   <h4><%= matricule %></h4>
+                               </li>
+                               <li>
+                                <p><i class="text-center"></i>Departement</p>
+                               </li>
+                               <li>
+                                <h4><%= departe %></h4>
+                               </li>
+                               <li>
+                                   <p><i class="text-center"></i>Classe</p>
+                               </li>
+                               <li>
+                                   <h4><%= classe %></h4>
+                               </li>
+                           </ul>
+                           <hr>
+                           <a href="/forum/modifier"><button  style="width: 100%; height: auto;  border-color: #fff; font-size: 20px;" class=" btn btn-primary">Modifier profil</button></a>
+                           <hr>
+                      
+                           <a href="/forum/deconnection"><button  style="width: 100%; height: auto;  border-color: #fff; font-size: 20px;" class=" btn btn-primary">Deconnecter</button></a> </div>
+                   </div>
+               </div>
+               <div class="col-lg-offset-1 col-md-offset-1 col-sm-8 col-md-8 col-lg-8" style="padding-bottom: 20px;">
+                <div class="row">         
+                 <div id="cour" style="margin-top: 30px;"  class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                     <a href="/espacecours/<%= departe %>/<%= classe %>/<%= cour %>">
+                      <div class="col-lg-12">
+                       <img style="width: 100%;" src="/assets/page/image/cours.jpg" >
+                     </div>
+                    <div  class="col-lg-12">
+                         <button style="width: 100%; height: auto;  border-color: #fff; font-size: 20px;" class=" btn btn-primary">Les Cours d'apprentissage</button>
+                     </div>
+                     </a>
+                   
+                 </div>
+                 <div id="cour" style="margin-top: 30px;"  class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                     <a href="/espaceforum/<%= departe %>/<%= classe %>/<%= cour %>">
+                      <div class="col-lg-12">
+                       <img style="width: 100%;" src="/assets/page/image/slide1.jpg" >
+                     </div>
+                    <div  class="col-lg-12">
+                         <button style="width: 100%; height: auto;  border-color: #fff; font-size: 20px;" class=" btn btn-primary">Forum de discution</button>
+                     </div>
+                     </a>
+                   
+                 </div>
+ 
+ 
+ 
+         </div>
+         </div>
+ 
+   
+</div>
+    </div>
+  <%- include('footer'); -%>
+</body>
+
+</html>

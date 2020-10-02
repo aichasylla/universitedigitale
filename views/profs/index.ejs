@@ -1,0 +1,84 @@
+<%- include('tete'); -%>
+<style>
+        #cours:hover
+        {
+            -webkit-box-shadow: 21px 18px 19px 3px rgba(0,0,0,0.75);
+-moz-box-shadow: 21px 18px 19px 3px rgba(0,0,0,0.75);
+box-shadow: 21px 18px 19px 3px rgba(0,0,0,0.75);
+padding: 0px;
+        }
+</style>
+<%- include('header'); -%>   
+     <!-- END HEADER MOBILE -->
+
+        <!-- PAGE CONTENT-->
+        <div class="page-content--bgf7">
+            <!-- BREADCRUMB-->
+            <section class="au-breadcrumb2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="au-breadcrumb-content">
+                                <div class="au-breadcrumb-left">
+                                    <span class="au-breadcrumb-span">Nous sommes a la page :</span>
+                                    <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                        <li class="list-inline-item active">
+                                            <a href="#">Acceuil</a>
+                                        </li>
+                                        <li class="list-inline-item seprate">
+                                            <span>/</span>
+                                        </li>
+                                        <li class="list-inline-item">De Espace Proffesseurs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END BREADCRUMB-->
+
+            <!-- WELCOME-->
+            <section class="welcome p-t-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title-4">Voici la liste des Cours que vous enseigner
+                            </h1>
+                            <hr class="line-seprate">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END WELCOME-->
+
+            <!-- STATISTIC CHART-->
+            <section class="statistic-chart">
+                <div class="container">
+                    <div class="row">
+                        <% for(var i = 0; i< coursenseigner.length ; i++){ %> 
+                        <div style="margin-bottom: 30px ;"  class="col-md-6 col-lg-4">
+                            <!-- CHART PERCENT-->
+                            <a id="cours" href="/profs/forum/<%= coursenseigner[i].departe %>/<%= coursenseigner[i].classe %>/<%= coursenseigner[i].cours %>">
+                                <div class="chart-percent-2" style="background-image: url(/assets/page/image/cta2-background.jpg);	background-position: top left; width: 300px;	height: 400px; margin: 0px;	background-repeat: no-repeat;">
+                                    <h3 style="color: #fff; font-weight: 800;" class="title-3 m-b-30">Cours de  <%= coursenseigner[i].cours %></h3>
+                                    <div class="chart-wrap" >
+                                        <h3 style="color: #fff; font-weight: 800;" class="title-3 m-b-30"><%= coursenseigner[i].departe %></h3>
+                                    </div>
+                                    <div class="chart-wrap" >
+                                        <h3 style="color: #fff; font-weight: 800;" class="title-3 m-b-30">Classe <%= coursenseigner[i].classe %></h3>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- END CHART PERCENT-->
+                        </div>
+                        <% } %>  
+                    </div>
+                </div>
+            </section>
+            <!-- END STATISTIC CHART-->
+<%- include('footer'); -%>
+</body>
+
+</html>
+<!-- end document-->

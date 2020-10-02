@@ -1,0 +1,75 @@
+<%- include('tete'); -%>
+<style>
+  @media (max-width:767px){
+    #p{ font-size: 30px;}
+    #t{ font-size: 15px;}
+    }
+</style>
+<%- include('header'); -%>
+
+  <div class="py-5 text-center text-white h-100 align-items-center d-flex" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), rgba(0, 0, 0, .75)), url(/assets/page/image/blog02.jpg);	background-position: center center, center center;	background-size: cover, cover;	background-repeat: repeat, no-repeat;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="mx-auto col-lg-8 col-md-10">
+          <h1 id="p" class="display-3 mb-4">Universite Digitale</h1>
+          <p class="lead mb-5">Universite Digitale est une universite moderne qui vous offre une formation de qualiter a vos enfants </p> <a href="/valeur" class="btn btn-lg mx-1 btn-outline-primary">Lire Plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="py-5 col-md-3 bg-primary border border-light col-12" id="t" style="background-color:#3b5998"> <a href="/statistique">
+            <i class="fa  fa-3x text-white fa-line-chart"> Statistique</i>
+          </a> </div>
+        <div class="py-5 col-md-3 bg-primary border border-light col-12" id="t" style="background-color:#00b2ff"> <a href="/emplois">
+            <i class="fa fa-3x text-white fa-clock-o"> Emplois du Temps</i>
+          </a> </div>
+        <div class="py-5 col-md-3 bg-primary border border-light col-12" id="t" style="background-color:#C92228"> <a href="/bibliotheque">
+            <i class="fa  fa-3x text-white fa-book"> Bibliotheque</i>
+          </a> </div>
+        <div class="py-5 col-md-3 bg-primary border border-light col-12" id="t" style="background-color:#C92228"> <a href="/formation">
+            <i class="fa  fa-3x text-white fa-book"> Formation</i>
+          </a> </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 text-center bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto col-md-12">
+          <h1 class="mb-4">Pourquoi nous choisir ?</h1>
+          <p> Universite Digitale vous garantie une formation de qualiter a vos enfants. </p> <a class="btn btn-outline-primary" href="/valeur">Lire Plus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 border-top border-bottom border-primary" style="	background-attachment: fixed;">
+    <div class="container">
+      <div class="row">
+        <div class="text-center mx-auto col-md-12">
+          <h1>Les Actualites de l'Universite</h1>
+        </div>
+      </div>
+      <div class="row">
+        <% for(var i= 0 ; i < requette.length; i++)  {%>
+        <div class="p-3 col-lg-4 col-12">
+          <div class="card text-center">
+            <div class="card-header p-3">
+              <h3><%= requette[i].titre %></h3>
+            </div>
+            <div class="card-body p-3">
+              <p><%= requette[i].soustitre %>.</p>
+              <a class="btn btn-primary" href="/actualite/<%= requette[i].id %>">Lire Plus</a>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <%- include('footer'); -%>
+</body>
+
+</html>

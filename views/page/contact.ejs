@@ -1,0 +1,57 @@
+<%- include('tete'); -%>
+<style>
+   @media (max-width:767px){
+    #p{ font-size: 30px;}
+    #t{ font-size: 15px;}
+    }
+</style>
+
+<%- include('header'); -%>
+
+<div class="py-5" style="	background-image: url(/assets/page/image/cta2-background.jpg);	background-position: top left; 	height: 400px;	background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="px-md-5 p-3 col-md-12 d-flex flex-column justify-content-center">
+          <h1 class="text-light">CONTACT</h1>
+          <p class="mb-3 lead text-light">Ici vous decouvrez nos contact</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 p-4">
+          <h1>Pourquoi nous ?</h1>
+          <p>Universite digital est une ecole qui offre une formation de qualite a vos enfants.Universite digital est une ecole qui offre une formation de qualite a vos enfants.Universite digital est une ecole qui offre une formation de qualite a vos enfants.Universite digital est une ecole qui offre une formation de qualite a vos enfants.Universite digital est une ecole qui offre une formation de qualite a vos enfants.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 p-4">
+          <p class="lead mt-3"> <b>Support</b> </p>
+          <p> <b>Telephone: </b> <a href="#">+224 629 800 121</a> </p>
+          <p> <b>Gmail: </b> <a href="#">universite@gmail.com</a> </p>
+          <p><b>Lieux: </b> <a href="#">Conakry, Enta, quartier wassa -wassa, En face de la station Shell</a> </p>
+        </div>
+        <div class="col-md-7 p-4">
+          <h3 class="mb-3">Envoyer votre message</h3>
+          <form method="POST" action="/contacter">
+            <div class="form-row">
+              <div class="form-group col-md-6"> <input type="text" class="form-control" name="nom" id="form36" placeholder="Votre Nom"> </div>
+              <div class="form-group col-md-6"> <input type="text" class="form-control" name="prenom" id="form37" placeholder="Votre Prenom"> </div>
+            </div>
+            <div class="form-group"> <input type="email" class="form-control" name="email" id="form39" placeholder="Email"> </div>
+            <div class="form-row">
+              <div class="form-group col-md-12"> <input type="number" class="form-control" name="telephone" id="form40" placeholder="Telephone"> </div>
+            </div>
+            <div class="form-group"> <input type="text" class="form-control"  name="sujet" id="form42" placeholder="Sujet"> </div>
+            <div class="form-group"> <textarea class="form-control" name="message" id="form43" rows="3" placeholder="Votre message"></textarea> </div> <button type="submit" class="btn btn-primary">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('footer'); -%>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<%- include('tete'); -%>
+  <style>
+    body{
+      background-color: #fff;
+    }
+  </style>  
+<%- include('header'); -%>
+        <!-- END HEADER MOBILE -->
+        <section  style="background: #fff;   padding: 50px;" class="container">   
+            <div class="row ">
+              <div class="col-lg-12">
+                <div class="row content-panel">
+                  <!-- /col-md-4 -->
+                  <div class="right-divider col-md-offset-3 col-md-4 profile-text">
+                    <h3><%= nom %></h3>
+                    <h3>Identifiant: <%= identifiant %></h3>
+                    <h3>Numero de telephone: <%= telephone %></h3>
+                    <h3>Vous dispensez les cours dans les classes suivantes :  <% for(var i = 0 ; i< coursetclasse.length ; i++){ %> <li><%= coursetclasse[i].cours   %> en <%= coursetclasse[i].classe    %> <%= coursetclasse[i].departe   %></li> <% } %>   </h3>
+                    <br>
+                  </div>
+                  <!-- /col-md-4 -->
+                  <div class="col-md-4 centered">
+                    <div class="profile-pic">
+                      <p><img src="/assets/page/image/avatar.png" class="user-profile-image rounded-circle"></p>
+                      <p>
+                        <a style="text-decoration: none; color: #fff;" href="/profs/deconnection"><button style="background:#212529; color: #fff; font-weight: 800;" class="btn btn-theme"><i class="fa fa-check"></i> Deconnecter</button>
+                        </a>
+                        <button style="background:#212529; color: #fff; font-weight: 800;" class="btn btn-theme02">Modifier compte</button>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- /col-md-4 -->
+                </div>
+                <!-- /row -->
+              </div>
+              </div>
+              <!-- /row -->
+            </div>
+          
+          <!-- /wrapper -->
+        </section>
+            <!-- END STATISTIC CHART-->
+
+            <!-- COPYRIGHT-->
+<%- include('footer'); -%>      
+</body>
+
+</html>
+<!-- end document-->

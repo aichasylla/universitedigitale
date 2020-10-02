@@ -1,0 +1,102 @@
+<%- include('tete'); -%>
+<link rel="stylesheet" type="text/css" href="/assets/page/css/jquery-ui.min.css">
+  <style> 
+  .ui-tabs-nav li > a
+    {
+        width: 100%;
+        text-align: center;
+        height: 70px;
+        font-size: 20px;
+        padding-top: 40px;
+    }
+    .ui-tabs-nav li
+    {
+        width: 48%;
+    }
+    .ui-widget-header
+    {
+        background: #111F29 none repeat scroll 0% 0%;
+        color: #1891EC;
+        height: 80px; 
+        width: 100%;
+    }
+    .ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    border: 1px solid #007bff;
+    background: #12bbad ;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+
+</style>
+<%- include('header'); -%>
+
+<div class="py-5" style="	background-image: url(/assets/page/image/cta2-background.jpg);	background-position: top left;	height: 400px;	background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="px-md-5 p-3 col-md-12 d-flex flex-column justify-content-center">
+          <h1 class="text-light">CRITERE D'INSCRIPTION</h1>
+          <p class="mb-3 lead text-light">Information sur les criteres d'inscription</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">UNIVERSITE</a></li>
+        <li><a href="#tabs-2">BTS</a></li>
+      </ul>
+      <div id="tabs-1">
+        <section class="about_us_area row">
+          <div class="container">
+            <div class="tittle wow fadeInUp">
+              <h2>Les dossiers a fournir pour l'inscription dans un UNIVERSITE</h2>
+            </div>
+            <div class="row about_row">
+              <div class="who_we_area col-md-7 col-sm-6">
+                <ul style="font-size: 25px;" class="text-left">
+                  <li>Attestation du BAC</li>
+                  <li>Extrait de naissance</li>
+                  <li>4 photos d'identiter</li>
+                  <li>Releves des notes des classes precedentes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="tabs-2">
+        <section class="about_us_area row">
+          <div class="container">
+            <div class="tittle wow fadeInUp">
+              <h2>Les dossiers a fournir pour l'inscription des BTS</h2>
+            </div>
+            <div class="row about_row">
+              <div class="who_we_area col-md-7 col-sm-6">
+                <ul style="font-size: 25px;" class="text-left">
+                  <li>Attestation du BAC</li>
+                  <li>Extrait de naissance</li>
+                  <li>4 photos d'identiter</li>
+                  <li>Releves des notes des classes precedentes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <%- include('footer'); -%>
+  <script src="/assets/page/js/jquery-ui.min.js"></script>
+  <script>
+    $("#tabs").tabs();
+  </script>
+</body>
+
+</html>

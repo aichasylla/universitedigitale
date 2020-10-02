@@ -1,0 +1,78 @@
+<%- include('tete'); -%>
+    
+    <%- include('header'); -%>
+
+
+        <!-- END HEADER MOBILE -->
+
+            <!-- END BREADCRUMB-->
+
+         
+            <!-- END WELCOME-->
+
+            <!-- STATISTIC CHART-->
+            <section style="background: #fff;" class="container">
+                
+                  <!--  /row -->
+                  <div class="row">
+            <div style=" margin-top: 20px; height: 100%; padding: 25px; margin-bottom: 5px;" class="col-sm-12 col-md-12 col-lg-12">
+                <div class="row">         
+             <div  class="col-lg-12" >
+             <div class="row">
+             <div class="col-lg-12">
+             <h4>Cliquez ce bouttons si dessous pour poser n'importe quel question sur tous les matieres de votre choix</h4></div>
+             <div class="offset-lg-5 offset-xs-3 offset-sm-3 col-lg-7">
+             <a href="/profs/forumnouvosujet/<%= departe %>/<%= laclasse %>/<%= reponse %>"><button style="background-color: #12bbad; color: #fff; font-size: 18px; padding: 15px; border-color: #fff;"><i class="fa fa-plus"></i> Nouveau sujet </button></a></div>
+         </div>
+             </div>
+             <div  class=" offset-lg-3 col-lg-7"  style="margin-bottom: 5%;">
+                <h2 style="text-align: center;">Les discutions</h2>
+                <% for( var i= question.length -1 ; i >= 0; i--)   {%>
+                 <div id="page" style="background: #12bbad; color: #fff; padding: 25px; margin-top: 20px;" class="col-md-12 mb">
+                     <a style="color: #fff; text-decoration: none; width: 100%;" href="/profs/forumdetails/<%= departe %>/<%= laclasse %>/<%= reponse %>/<%= question[i]['id'] %>">
+                         <div class="message-p pn">
+                             <div class="row">
+                               <div class="col-lg-2 centered ">
+                                 <img src="/assets/page/image/avatar.png"  class="user-profile-image rounded-circle" alt="" />
+                               </div>
+                               <div class="col-lg-10" style="padding-left: 20px;">
+                                 <p>
+                                   <name><%= question[i]['pseudo'] %></name> 
+                                 </p>
+                                 <p id="date" class="small"><%= question[i]['date'] %></p>
+                                 <p style="color: #fff; font-weight: 900;" class="message"><%= question[i]['question'] %></p>
+                               </div>
+                             </div>
+                           </div>
+                     </a>
+                     
+                     <!-- /Message Panel-->
+                   </div>
+                 <% } %>
+             </div>
+     
+         </div>
+         </div>
+                  </div>
+                <!-- /wrapper -->
+              </section>
+            <!-- END STATISTIC CHART-->
+
+            <!-- COPYRIGHT-->
+            <%- include('footer'); -%>      
+<script>
+  var date = document.querySelectorAll('#date')
+  moment.locale('fr')
+  var element = '';
+  for (var  i = 0; i< date.length; i++) {
+   element = date[i].textContent;
+  var datation = moment(element).fromNow();
+  date[i].innerHTML = datation;
+      }
+  
+</script>
+
+</body>
+
+</html>
+<!-- end document-->

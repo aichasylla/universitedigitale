@@ -1,0 +1,135 @@
+<%- include('tete'); -%>
+<style>
+  #notifi{
+text-align: left;
+font-size: 17px;
+z-index: 1000;
+padding: 5px;
+border-radius: 5px;
+color: #721c24;
+background-color: #f8d7da;
+border-color: #f5c6cb;
+position: absolute; 
+margin-top: -50px;
+display: none;
+margin-left: 10%;
+ }
+#pasauth
+{ 
+text-align: left;
+font-size: 17px;
+margin-left: 10%;
+z-index: 1000;
+padding: 5px;
+border-radius: 5px;
+color: #856404;
+background-color: #fff3cd;
+border-color: #ffeeba;
+position: absolute; 
+margin-top: -50px;
+display: none;
+
+}
+</style>
+<%- include('header'); -%>
+<div class="py-5" style="background-image: url(/assets/page/image/cta2-background.jpg);	background-position: top left;	height: 400px;	background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="px-md-5 p-3 col-md-12 d-flex flex-column justify-content-center">
+          <h1 class="text-light">ESPACES D'APPRENTISSAGE</h1>
+          <p class="mb-3 lead text-light">Espaces d'apprentissage est l'endroit ou l'eleve peut suivre un cours ou discuter avec son proffesseurs</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="py-3 ">
+    <div class="container">
+      <div class="row">
+        <% if(typeof authentifierreur !== "undefined"){ %>
+          <div id="pasauth" class="col-lg-offset-3   col-md-offset-4 col-sm-11 col-xs-12 col-md-7 col-lg-5 ">
+            <ul>
+            
+            <li><%= authentifierreur %></li>
+            
+            </ul>
+          </div>
+          <% } %> 
+          <% if(typeof erreur !== "undefined"){ %>
+            <div id="notifi" class="col-lg-offset-5   col-md-offset-5 col-sm-11 col-xs-12 col-md-7 col-lg-5 ">
+              <ul>
+                <% for(var i= 0 ; i < erreur.length; i++)  {%> 
+                <li><%= erreur[i].msg %></li>
+                  <% } %>
+                </ul>
+            </div>
+      
+          </div>
+          <% } %>
+        <div class="mx-auto p-4 col-md-7">
+          <h1 class="mb-4">Deja inscrit ? Se Connecter</h1>
+          <form method="POST" action="/connection">
+            <div class="form-group"> <input type="number" name="matricule" class="form-control" id="form33" placeholder="Votre Matricule"> </div>
+            <div class="form-group"> <input type="password" name="motdepasse" class="form-control" id="form33" placeholder="Votre Mot de passe"> </div>
+            <div class="form-group">
+                <select name='departe' class=" input-lg form-control">
+                    <optgroup label="UNIVERSITER">
+                        <option value="Science Comptable">Science Comptable</option>
+                        <option value="Journalisme">Journalisme</option>
+                        <option value="Administration des affaire">Administration des affaires</option>
+                        <option value="Genie Civile">Genie Civile</option>                                    
+                    </optgroup>
+            
+                        <optgroup label="BTS">
+                        <option value="Science Politique">Science Politique</option>
+                        <option value="Journalisme">Journalisme</option>
+                        <option value="Science Economique">Science Economique</option>
+                        <option value="Droit">Droit</option>
+                        </optgroup>
+                      </select>
+            </div>
+            <div class="form-group">
+                <select name='classe' class=" input-lg form-control">
+                    <option value="1er annee">1er Annee</option>
+                    <option value="2eme annee">2eme Annee</option>
+                    <option value="3eme annee ">3eme Annee</option>
+                    <option value="4eme annee">4eme Annee</option>
+                  </select>
+            </div> 
+<div class="col-lg-12"><a style="font-size: 20px; text-align: left; left: 1%;"  class="active text-left" href="/forum/modifier">Mot de passe oublier ?</a><br>
+</div>    
+            <button type="submit" class="btn btn-outline-primary btn-block">Envoyer</button>
+          </form>
+          <a class="active" style="font-size: 20px;" href="#">Pas encore inscrit ?</a><br>
+          <a  href="/creercompteetu"><button style="width: 100%;  border-color: #fff; font-size: 20px;" class=" btn btn-primary">Creer un compte</button></a>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('footer'); -%>
+  <script>
+    
+    '<% if(typeof erreur !== "undefined"){ %>'
+                    $("#notifi").css({ 
+                      display: 'block'
+                    });
+                setTimeout(function () {
+                    $("#notifi").css({ 
+                      display: 'none'
+                    });
+                  }, 5000)
+                    '<% } %> '
+    '<% if(typeof authentifierreur !== "undefined"){ %>'
+                    $("#pasauth").css({ 
+                      display: 'block'
+                    });
+                setTimeout(function () {
+                    $("#pasauth").css({ 
+                      display: 'none'
+                    });
+                  }, 5000)
+                    '<% } %> '
+  </script>
+</body>
+
+</html>

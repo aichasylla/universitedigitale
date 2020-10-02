@@ -1,0 +1,105 @@
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER DESKTOP-->
+        <header class="header-desktop3 d-none d-lg-block">
+            <div class="section__content section__content--p35">
+                <div class="header3-wrap">
+                    <div class="header__logo">
+                        <a href="/profs/">
+                            <img src="/assets/profs/images/icon/logo-white.png" alt="CoolAdmin" />
+                        </a>
+                    </div>
+                    <div class="header__navbar">
+                        <ul class="list-unstyled">
+                            <li class="has-sub">
+                                <a href="/profs/acceuil">
+                                    <i class="fas fa-tachometer-alt"></i>Acceuil
+                                    <span class="bot-line"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-comments"></i>
+                                    <span class="bot-line"></span>Forum</a>
+                            </li>
+                            <li>
+                                <a href="/profs/compte">
+                                    <i class="fas fa-user"></i>
+                                    <span class="bot-line"></span>Compte</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="header__tool">
+                        
+                        <div class="account-wrap">
+                            <div class="account-item account-item--style2 clearfix">
+                                <div class="image">
+                                    <img src="/assets/profs/images/icon/avatar-01.jpg" alt="" />
+                                </div>
+                                <div class="content">
+                                    <a class="js-acc-btn" href="#"> <% if(typeof nom !== "undefined"){ %><%= nom %> <% } %></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- END HEADER DESKTOP-->
+
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile header-mobile-2 d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="/profs/acceuil">
+                            <img src="/assets/profs/images/icon/logo-white.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a href="/profs/acceuil">
+                                <i class="fas fa-tachometer-alt"></i>Acceuil
+                                <span class="bot-line"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-comments"></i>
+                                <span class="bot-line"></span>Forum</a>
+                        </li>
+                        <li>
+                            <a href="/profs/compte">
+                                <i class="fas fa-user"></i>
+                                <span class="bot-line"></span>Compte</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="sub-header-mobile-2 d-block d-lg-none">
+            <div class="header__tool">
+                <div class="account-wrap">
+                    <div class="account-item account-item--style2 clearfix js-item-menu">
+                        <div class="image">
+                            <img src="/assets/profs/images/icon/avatar-01.jpg" alt="John Doe" />
+                        </div>
+                        <div class="content">
+                            <a class="js-acc-btn" href="#"> <% if(typeof nom !== "undefined"){ %><%= nom %> <% } %></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

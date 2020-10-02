@@ -1,0 +1,37 @@
+<%- include('tete'); -%>
+
+<%- include('header'); -%>
+<div class="py-5" style="background-image: url(/assets/page/image/cta2-background.jpg);	background-position: top left;	height: 400px;	background-repeat: no-repeat;">
+    <div class="container">
+      <div class="row">
+        <div class="px-md-5 p-3 col-md-12 d-flex flex-column justify-content-center">
+          <h1 class="text-light">VERIFICATION DE NOTE UNIVERSITE</h1>
+          <p class="mb-3 lead text-light">Decouvrer ici les differents bulletin de notes des departements de  UNIVERSITE </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="py-3 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="mx-auto p-4 col-md-7">
+          <h1 class="mb-4">Authentifier vous !</h1>
+          <form>
+            <div class="form-group"> <input type="number" class="form-control" id="form33" placeholder="Votre Matricule"> </div>
+            <div class="form-group">
+              <select name='addresse' class=" input-lg form-control">
+                <option value="">Science Politique</option>
+                <option value="8e_annnee">Journalisme</option>
+                <option value="9e_annee">Droit</option>
+                <option value="10e_annee">Communication</option>
+              </select>
+            </div> <button type="submit" class="btn btn-outline-primary btn-block">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('footer'); -%>
+</body>
+
+</html>

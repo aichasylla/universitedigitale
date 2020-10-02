@@ -1,0 +1,104 @@
+<%- include('tete'); -%>
+    <style>
+        
+    </style>
+    <%- include('header'); -%>
+ <!-- STATISTIC CHART-->
+            <section style="background: #fff;" class="container">
+                
+                  <!--  /row -->
+                  <div class="row">
+                    <div class="offset-md-3  col-md-7">
+                        <div class="row">
+                        <div style="background: #fff; padding: 25px;" class="col-lg-12">
+                          <h3 style="color:  #333;">Question</h3>
+                        </div>
+              
+                         <div id="pagination" style="background:  #333; color: #fff; padding: 25px; margin-top: 20px;" class="col-md-12 mb">
+                          <div class="message-p pn">
+                            <div class="row">
+                              <div class="col-md-2 centered ">
+                                <img src="/assets/page/image/avatar.png" class="user-profile-image rounded-circle" alt="" />
+                              </div>
+                              <div class="col-md-10">
+                                <p style="color:  #12bbad;">
+                                  <name><%= question['pseudo'] %></name>
+                                  
+                                </p>
+                                <p id="dateposeur" style=" color:#12bbad;" class="small"><%= question['date'] %> </p>
+                                <p style="color: #fff; font-weight: 900;" class="message"><%= question['question'] %></p>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- /Message Panel-->
+                        </div>
+                        
+                          <h3 style="text-align: center; margin-top: 20px;">
+                          
+                           <%= lesreponse.length %>  Reponse</h3>
+              
+                           <% for(var i= lesreponse.length -1 ; i >= 0; i--)  {%>
+                         <div id="pagination" style="background: #12bbad; color: #fff; padding: 25px; margin-top: 20px;" class="col-md-12 mb">
+                          <div class="message-p pn">
+                            <div class="row">
+                              <div class="col-md-2 centered ">
+                                <img src="/assets/page/image/avatar.png" class="user-profile-image rounded-circle" alt="" /> 
+                              </div>
+                              <div class="col-md-10">
+                                <p>
+                                  <name><%= lesreponse[i]['pseudo'] %></name>        
+                                </p>
+                                <p id="date" class="small"><%= lesreponse[i]['date'] %></p>
+                                <p style="color: #fff; font-weight: 900;" class="message"><%= lesreponse[i]['reponse'] %></p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <% } %>
+                               
+              
+                       <hr>
+                      <hr>
+                     
+                        <div style="background: #fff; padding: 25px; margin-top: 20px;" class=" col-lg-12">
+                          <form  action="/profs/forumrepondrediscution" method="POST">
+                            <div class="form-group row">
+                              <label for="rep" class="col-lg-12 input-lg col-form-label">Repondre</label>
+                              <div class="col-lg-12">
+                                <textarea id="msg" style="width: 100%; border: 2px solid grey; " rows="6" class="col-lg-12 input-lg col-form-label" name="message" ></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-lg-12 ">
+                                <button style="width: 100%; background-color: #12bbad; border-color: #fff; font-size: 20px;" type="submit" name="creer" id="submit" class=" btn btn-primary">Repondre</button>
+                              </div>
+                            </div>
+              
+                          </form>
+                        </div>
+              
+                      </div>
+                  </div>
+                  </div>
+              </section>
+            <!-- COPYRIGHT-->
+            <%- include('footer'); -%>      
+<script>
+   var ta = moment('24/12/2019 09:15:00', "DD MM YYYY hh:mm:ss").fromNow()
+  var date = document.querySelectorAll('#date')
+  var dateposeur = document.querySelector('#dateposeur')
+  moment.locale('fr')
+  var h = moment(dateposeur.textContent).fromNow();
+  dateposeur.innerHTML = h;
+  var element = '';
+  for (var  i = 0; i< date.length; i++) {
+   element = date[i].textContent;
+  var datation = moment(element).fromNow();
+  date[i].innerHTML = datation;
+      }
+  
+</script>
+
+</body>
+
+</html>
